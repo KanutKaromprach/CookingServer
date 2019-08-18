@@ -15,12 +15,27 @@ namespace CookingServer.Controllers
             _cookingService = cookingService;
         }
 
+        [HttpGet("{username}")]
+        public async Task<ActionResult<Cooking>> GetCooking(string username)
+        {
+            var result = await _cookingService.GetCooking(username);
+            return Ok(result);
+        }
+
+
         [ProducesResponseType(201)]
-        [HttpPost()]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateCooking([FromBody]Cooking cooking)
         {
             await _cookingService.CreateCooking(cooking);
             return StatusCode(201);
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCooking([FromBody]Cooking cooking)
+        {
+            await _cookingService.UpdateCooking(cooking);
+           return Ok();
         }
 
 

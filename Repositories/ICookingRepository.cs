@@ -5,6 +5,8 @@ namespace CookingServer.Repositories
 {
     public interface ICookingRepository
     {
+        Task<Cooking> GetCooking(string username);
         Task CreateCooking(Cooking cooking);
+        Task UpdateCooking(Cooking cooking);
     }
 }
