@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+
 namespace CookingServer.Models
 {
     public class CookingDetail
     {
-        public string Name { get; set; }
-        public int Quantity { get; set; }
+        public string status { get; set; }
+        public List<CookingMaterial> cookingMaterial { get; set; }
+
     }
 }
