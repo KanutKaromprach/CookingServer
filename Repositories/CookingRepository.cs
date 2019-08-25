@@ -28,7 +28,9 @@ namespace CookingServer.Repositories
         {
             var filter = Builders<Cooking>.Filter.Eq("Username", cooking.Username);
             var update = Builders<Cooking>.Update
-                .Set(o => o.Ingredient, cooking.Ingredient)
+                .Set(o => o.IngredientMeat, cooking.IngredientMeat)
+                .Set(o => o.IngredientVeg, cooking.IngredientVeg)
+                .Set(o => o.Seasoning, cooking.Seasoning)
                 .Set(o => o.Person, cooking.Person);
             await _cooking.UpdateOneAsync(filter, update);
         }
