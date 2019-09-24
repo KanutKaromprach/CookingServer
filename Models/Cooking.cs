@@ -14,7 +14,9 @@ namespace CookingServer.Models
         public List<CookingMaterial> IngredientMeat { get; set; }
         public List<CookingMaterial> IngredientVeg { get; set; }
         public List<CookingMaterial> Seasoning { get; set; }
+        public List<CookingMaterial> Noodle { get; set; }
         public int Person { get; set; }
         public bool Status { get; set; }
-    }
+        public UserProfile UserProfile { get; set ;}
+}
 }

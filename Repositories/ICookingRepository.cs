@@ -8,5 +8,6 @@ namespace CookingServer.Repositories
         Task<Cooking> GetCooking(string username);
         Task CreateCooking(Cooking cooking);
         Task UpdateCooking(Cooking cooking);
+        Task UpdateProfile(Cooking cooking);
     }
 }

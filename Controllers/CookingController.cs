@@ -38,6 +38,13 @@ namespace CookingServer.Controllers
            return Ok();
         }
 
+        [HttpPut("profile/update")]
+        public async Task<IActionResult> UpdateProfile([FromBody]Cooking cooking)
+        {
+            await _cookingService.UpdateProfile(cooking);
+           return Ok();
+        }
+
 
     }
 }

@@ -31,7 +31,15 @@ namespace CookingServer.Repositories
                 .Set(o => o.IngredientMeat, cooking.IngredientMeat)
                 .Set(o => o.IngredientVeg, cooking.IngredientVeg)
                 .Set(o => o.Seasoning, cooking.Seasoning)
-                .Set(o => o.Person, cooking.Person);
+                .Set(o => o.Person, cooking.Person)
+                .Set(o => o.Noodle, cooking.Noodle);
+            await _cooking.UpdateOneAsync(filter, update);
+        }
+        public async Task UpdateProfile(Cooking cooking)
+        {
+            var filter = Builders<Cooking>.Filter.Eq("Username", cooking.Username);
+            var update = Builders<Cooking>.Update
+                .Set(o => o.UserProfile, cooking.UserProfile);
             await _cooking.UpdateOneAsync(filter, update);
         }
     }

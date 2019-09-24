@@ -25,5 +25,10 @@ namespace CookingServer.Services
         {
             await _cookingRepository.UpdateCooking(cooking);
         }
+        public async Task UpdateProfile(Cooking cooking)
+        {
+            await _cookingRepository.UpdateProfile(cooking);
+        }
+
     }
 }
